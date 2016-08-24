@@ -50,9 +50,12 @@ public class Board extends JPanel{
 				if (table[row][col] >= 0) { 
 					fields[row][col].setBorder(border);
 					if (table[row][col] == 1) {
+						fields[row][col].setBackground(Color.CYAN);
+						fields[row][col].add(new JLabel("X"));
+					} else if (table[row][col] == 2) {
 						fields[row][col].setBackground(Color.GREEN);
 						fields[row][col].add(new JLabel("Inicio"));
-					} else if (table[row][col] == 2) {
+					} else if (table[row][col] == 3) {
 						fields[row][col].setBackground(Color.GREEN);
 						fields[row][col].add(new JLabel("Saída"));
 					}

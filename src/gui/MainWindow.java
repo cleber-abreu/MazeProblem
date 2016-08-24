@@ -40,23 +40,14 @@ public class MainWindow extends JFrame {
 				frmMain.setLocationRelativeTo(null);
 				frmMain.setVisible(true);
 				
-				MazeProblem maze = new MazeProblem(0, 0, 10, 25);
-				board.paintBoard(maze.getTable());
-//				board.repaint();
+				MazeProblem maze = new MazeProblem(2, 3, 6, 8, 10, 10, 30);
+				board.paintBoard(maze.getFields());
 				
-//				if (maze.tryOut(0, 0)) {
-//					System.out.println("ok");
-//					
-//					int[][] table = maze.getTable();
-//					for (int row = 0; row < table.length; row++) {
-//						for (int col = 0; col < table.length; col++) {
-//							System.out.print(table[row][col] + "\t");
-//						}
-//						System.out.println();
-//					}
-//				} else {
-//					System.out.println("Deu ruim");
-//				}
+				if (maze.tryOut(2, 3, 1)) {
+					board.paintBoard(maze.getFields());
+				} else {
+					System.out.println("Deu ruim");
+				}
 			}
 		});
 	}
