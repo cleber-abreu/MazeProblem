@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import global.MazeProblem;
+
 @SuppressWarnings("serial")
 public class MainWindow extends JFrame {
 	
@@ -28,7 +30,6 @@ public class MainWindow extends JFrame {
                 }
 				
 				JFrame frmMain = new JFrame("Maze Problem");
-				
 				board = new Board();
 				
 				frmMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,6 +39,24 @@ public class MainWindow extends JFrame {
 				frmMain.pack();
 				frmMain.setLocationRelativeTo(null);
 				frmMain.setVisible(true);
+				
+				MazeProblem maze = new MazeProblem(0, 0, 10, 25);
+				board.paintBoard(maze.getTable());
+//				board.repaint();
+				
+//				if (maze.tryOut(0, 0)) {
+//					System.out.println("ok");
+//					
+//					int[][] table = maze.getTable();
+//					for (int row = 0; row < table.length; row++) {
+//						for (int col = 0; col < table.length; col++) {
+//							System.out.print(table[row][col] + "\t");
+//						}
+//						System.out.println();
+//					}
+//				} else {
+//					System.out.println("Deu ruim");
+//				}
 			}
 		});
 	}
