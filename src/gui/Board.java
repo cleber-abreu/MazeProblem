@@ -64,7 +64,7 @@ public class Board extends JPanel{
 					fields[row][col].setBackground(Color.DARK_GRAY);;
 				}
 				add(fields[row][col], grid);
-				repaint();
+				revalidate();
 			}
 		}
 	}
